@@ -1,0 +1,197 @@
+/* Include padding and borders in element widths to avoid mobile overflow. */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 32px 16px;
+    background: #f3f5f9;
+    color: #243247;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+main {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    overflow-wrap: anywhere;
+}
+
+h1,
+h2 {
+    color: #17253a;
+    line-height: 1.25;
+}
+
+h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+
+h2 {
+    margin: 0 0 24px;
+    font-size: 1.35rem;
+}
+
+main > p {
+    margin: 0 0 24px;
+    color: #526176;
+}
+
+section {
+    padding: 28px;
+    margin-bottom: 24px;
+    background: #ffffff;
+    border: 1px solid #d7dee8;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #17253a08;
+}
+
+#expense-form {
+    display: grid;
+    gap: 20px;
+}
+
+#expense-form > div {
+    min-width: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+input,
+select,
+button {
+    font: inherit;
+}
+
+input,
+select {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    padding: 10px 12px;
+    color: #243247;
+    background: #ffffff;
+    border: 1px solid #8795a9;
+    border-radius: 6px;
+}
+
+button {
+    min-height: 46px;
+    padding: 10px 18px;
+    color: #ffffff;
+    background: #2457c5;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+}
+
+button:hover:not(:disabled) {
+    background: #19449e;
+}
+
+button:disabled {
+    color: #526176;
+    background: #e3e8ef;
+    border-color: #c5cedb;
+    cursor: not-allowed;
+}
+
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+    outline: 3px solid #2457c5;
+    outline-offset: 3px;
+}
+
+#expense-form > p,
+#empty-message {
+    margin: 0;
+    color: #526176;
+}
+
+/* Show an error box only when a message is present. */
+#expense-form #error-message {
+    color: #9b1c1c;
+    background: #fff1f1;
+    border-left: 4px solid #b42323;
+    padding: 12px;
+    border-radius: 4px;
+}
+
+#expense-form #error-message:empty {
+    padding: 0;
+    border: 0;
+}
+
+#expense-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Future items can contain expense details and a Delete button. */
+#expense-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 0;
+    border-bottom: 1px solid #d7dee8;
+}
+
+#expense-list li > * {
+    min-width: 0;
+    max-width: 100%;
+}
+
+#expense-list button {
+    margin-left: auto;
+    color: #9b1c1c;
+    background: #fff1f1;
+    border-color: #e4a7a7;
+}
+
+#expense-list button:hover:not(:disabled) {
+    background: #ffe0e0;
+}
+
+#expense-list + p {
+    margin: 24px 0 0;
+    padding-top: 20px;
+    border-top: 2px solid #d7dee8;
+    font-weight: 600;
+}
+
+#total-amount {
+    display: block;
+    margin-top: 4px;
+    color: #155b43;
+    font-size: 2rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 20px 12px;
+    }
+
+    section {
+        padding: 20px 16px;
+    }
+
+    h1 {
+        font-size: 1.75rem;
+    }
+}

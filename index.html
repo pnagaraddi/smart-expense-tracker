@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main>
+        <h1>Expense Tracker</h1>
+        <p>Track your expenses in US dollars (USD).</p>
+
+        <section aria-labelledby="add-expense-heading">
+            <h2 id="add-expense-heading">Add an expense</h2>
+
+            <form id="expense-form" aria-describedby="error-message" novalidate>
+                <div>
+                    <label for="expense-name">Expense name (required)</label>
+                    <input type="text" id="expense-name" name="expense-name" required>
+                </div>
+
+                <div>
+                    <label for="expense-amount">Amount in USD (required)</label>
+                    <input type="text" id="expense-amount" name="expense-amount"
+                           inputmode="decimal" required>
+                </div>
+
+                <div>
+                    <label for="expense-category">Category (required)</label>
+                    <select id="expense-category" name="expense-category" required>
+                        <option value="">Choose a category</option>
+                        <option value="Food">Food</option>
+                        <option value="Travel">Travel</option>
+                        <option value="Housing">Housing</option>
+                        <option value="Utilities">Utilities</option>
+                        <option value="Entertainment">Entertainment</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <p id="error-message" role="alert"></p>
+
+                <button type="submit">Add expense</button>
+            </form>
+        </section>
+
+        <section aria-labelledby="expenses-heading">
+            <h2 id="expenses-heading">Your expenses</h2>
+            <p id="empty-message">No expenses yet.</p>
+            <!-- Expense items are rendered by script.js. -->
+            <ul id="expense-list"></ul>
+            <p>Total spent (USD): <output id="total-amount" aria-live="polite">$0.00</output></p>
+        </section>
+    </main>
+</body>
+</html>
